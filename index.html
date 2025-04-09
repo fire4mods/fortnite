@@ -163,7 +163,8 @@
             align-items: center;
             gap: 10px;
             padding: 12px 30px;
-            background: var(--primary);
+            background: linear-gradient(to right, #22C45E, #1E9C4D);
+            box-shadow: 0 6px 20px rgba(34, 196, 94, 0.4);
             color: var(--dark);
             text-decoration: none;
             border-radius: 50px;
@@ -177,6 +178,7 @@
 
         .download-btn:hover {
             background: var(--secondary);
+            color: #22C45E;
         }
 
         .specs-grid {
@@ -263,15 +265,277 @@
             width: 250px;
         }
 
-        .footer {
+      
+        .footer-bottom {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .dl-verified {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dl-verified i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .dl-verified span {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+      
+              .footer {
             background: var(--light);
             color: var(--text);
             padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
+            margin-top: 40px;
         }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        .loader {
+            border: 4px solid var(--light);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none; /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Help Button Styles */
+        .help-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.3);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .help-button:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 204, 255, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 255, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+        }
+
+        /* Help Modal Styles */
+        .help-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .help-modal-content {
+            background-color: var(--light);
+            margin: 10% auto;
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-help {
+            color: var(--text);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-help:hover {
+            color: var(--primary);
+        }
+
+        .help-content {
+            padding: 20px 0;
+        }
+
+        .help-content h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .help-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .help-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .help-content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .help-content li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .help-cta {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .help-cta:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block; /* Show menu icon on mobile */
+            }
+
+            .nav-links {
+                display: none; /* Hide nav links by default on mobile */
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links.active {
+                display: flex; /* Show nav links when active */
+            }
+            
+            .help-button {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 20px;
+            }
+            
+            .help-modal-content {
+                width: 90%;
+                margin: 20% auto;
+                padding: 20px;
+            }
+        }
+
+      
         @media (max-width: 768px) {
             .menu-icon {
                 display: block;
@@ -487,19 +751,153 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div>
-            &copy; 2025 FireMods Games & Apps. All rights reserved.
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="dl-verified" style="text-align: center;">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified by Play Protect</span>
+                </div>
+            </div>
         </div>
     </footer>
+  
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Popular Apps</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 <a href="#">FIREMODS</a>. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Floating Help Button -->
+    <div class="help-button" id="helpButton">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-help">&times;</span>
+            <div class="help-content">
+                <h3>How to Download Games</h3>
+                <p>To access our free downloads, we require users to complete a simple offer. These offers help support our platform and keep it free for everyone.</p>
+                
+                <p>The offers may include:</p>
+                <ul>
+                    <li>Trying an app or game</li>
+                    <li>Completing a short survey</li>
+                    <li>Signing up for a service</li>
+                </ul>
+                
+                <p>All offers are safe and legitimate. Thank you for your support!</p>
+                
+                <p><strong>Download Steps:</strong></p>
+                <ul>
+                    <li>Click on the game you want to download</li>
+                    <li>Complete the simple offer (usually takes less than 1 minute)</li>
+                    <li>Get your download link</li>
+                    <li>Install and enjoy!</li>
+                </ul>
+                
+                <button class="help-cta" id="closeHelpBtn">Got it, thanks!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>/*<![CDATA[*/ cookieChoices = {}; /*]]>*/</script>
     <script>
-      /*<![CDATA[*/ cookieChoices = {}; /*]]>*/
-    </script>
-    <script>
+        const helpButton = document.getElementById('helpButton');
+        const helpModal = document.getElementById('helpModal');
+        const closeHelp = document.querySelector('.close-help');
+        const closeHelpBtn = document.getElementById('closeHelpBtn');
+      
         // Mobile Menu
         document.getElementById('menuIcon').addEventListener('click', function() {
             document.getElementById('navLinks').classList.toggle('active');
         });
+
+        // Toggle help modal
+        helpButton.addEventListener('click', () => {
+            helpModal.style.display = 'block';
+            // Stop the pulse animation when clicked
+            helpButton.style.animation = 'none';
+        });
+
+        // Close modal when X is clicked
+        closeHelp.addEventListener('click', () => {
+            helpModal.style.display = 'none';
+        });
+
+        // Close modal when "Got it, thanks" is clicked
+        closeHelpBtn.addEventListener('click', () => {
+            helpModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === helpModal) {
+                helpModal.style.display = 'none';
+            }
+        });
+
+        
+        // Add slight wiggle animation to help button after 10 seconds if not clicked
+        setTimeout(() => {
+            if (!helpButton.clicked) {
+                helpButton.style.animation = 'pulse 2s infinite, wiggle 1s 3';
+            }
+        }, 10000);
+        
+        // Add wiggle animation keyframes
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes wiggle {
+                0% { transform: rotate(0deg); }
+                25% { transform: rotate(5deg); }
+                50% { transform: rotate(-5deg); }
+                75% { transform: rotate(5deg); }
+                100% { transform: rotate(0deg); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
