@@ -38,6 +38,16 @@
             --text: #e0e0e0;
         }
 
+        ::-moz-selection { /* Code for Firefox */
+          color: white;
+          background: #22C55E;
+        }
+
+        ::selection {
+          color: white;
+          background: #22C55E;
+        }
+        
         body {
             background: var(--dark);
             color: var(--text);
@@ -569,111 +579,6 @@
             }
         }
     </style>
-      <!-- Protect Code -->
-      <style>
-        #custom-notification {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #f44336;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slide-in 0.3s ease, slide-out 0.3s ease 2.7s forwards;
-        }
-
-        @keyframes slide-in {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slide-out {
-            from {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-        }
-      </style>
-
-      <div id="custom-notification" style="display:none; position:fixed; top:20px; right:20px; background-color:#f44336; color:white; padding:15px; border-radius:5px; z-index:1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        Hotkey disabled.
-      </div>
-
-      <script>
-        document.addEventListener('keydown', function (event) {
-            // Block F12
-            if (event.key === 'F12') {
-                event.preventDefault();
-                showCustomNotification('F12 is disabled on this site.');
-            }
-
-            // Block Ctrl+U (View Source)
-            if (event.ctrlKey && event.key === 'u') {
-                event.preventDefault();
-                showCustomNotification('Ctrl+U is disabled on this site.');
-            }
-
-            // Block Ctrl+Shift+I (DevTools)
-            if (event.ctrlKey && event.shiftKey && event.key === 'I') {
-                event.preventDefault();
-                showCustomNotification('Ctrl+Shift+I is disabled on this site.');
-            }
-            if (event.ctrlKey && event.key === 'p') {
-                event.preventDefault();
-                showCustomNotification('Printing is disabled on this site.');
-            }
-
-            // Block Ctrl+C (Copy)
-            if (event.ctrlKey && event.key === 'c') {
-                event.preventDefault();
-                showCustomNotification('Copying content is disabled on this site.');
-            }
-
-            // Block Ctrl+Shift+C (Inspect Element)
-            if (event.ctrlKey && event.shiftKey && event.key === 'C') {
-                event.preventDefault();
-                showCustomNotification('Ctrl+Shift+C is disabled on this site.');
-            }
-        });
-
-        document.addEventListener('contextmenu', function (event) {
-            event.preventDefault();
-            showCustomNotification('Right-click is disabled on this site.');
-        });
-
-        function showCustomNotification(message) {
-            const notification = document.getElementById('custom-notification');
-            notification.textContent = message;
-            notification.style.display = 'block';
-
-            // Hide the notification after 3 seconds
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
-        }
-      </script>
-      <!-- End Protect Code -->
-      <!-- Locker Code -->
-        <script type="text/javascript">
-            var RFwMr_lYA_DfxJnc={"it":4463124,"key":"3fca4"};
-        </script>
-        <script src="https://d2yc6hxtq0phup.cloudfront.net/8b5c3ab.js"></script>
-      <!-- End Locker Code -->
 </head>
 <body>
     <header class="header">
@@ -843,6 +748,67 @@
 
     <!-- JavaScript -->
     <script>/*<![CDATA[*/ cookieChoices = {}; /*]]>*/</script>
+      <!-- Locker Code -->
+        <script type="text/javascript">
+            var RFwMr_lYA_DfxJnc={"it":4463124,"key":"3fca4"};
+        </script>
+        <script src="https://d2yc6hxtq0phup.cloudfront.net/8b5c3ab.js"></script>
+      <!-- End Locker Code -->
+      <!-- Protect Code -->
+      <script>
+        document.addEventListener('keydown', function (event) {
+            // Block F12
+            if (event.key === 'F12') {
+                event.preventDefault();
+                showCustomNotification('F12 is disabled on this site.');
+            }
+
+            // Block Ctrl+U (View Source)
+            if (event.ctrlKey && event.key === 'u') {
+                event.preventDefault();
+                showCustomNotification('Ctrl+U is disabled on this site.');
+            }
+
+            // Block Ctrl+Shift+I (DevTools)
+            if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+                event.preventDefault();
+                showCustomNotification('Ctrl+Shift+I is disabled on this site.');
+            }
+            if (event.ctrlKey && event.key === 'p') {
+                event.preventDefault();
+                showCustomNotification('Printing is disabled on this site.');
+            }
+
+            // Block Ctrl+C (Copy)
+            if (event.ctrlKey && event.key === 'c') {
+                event.preventDefault();
+                showCustomNotification('Copying content is disabled on this site.');
+            }
+
+            // Block Ctrl+Shift+C (Inspect Element)
+            if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+                event.preventDefault();
+                showCustomNotification('Ctrl+Shift+C is disabled on this site.');
+            }
+        });
+
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+            showCustomNotification('Right-click is disabled on this site.');
+        });
+
+        function showCustomNotification(message) {
+            const notification = document.getElementById('custom-notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+
+            // Hide the notification after 3 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+      </script>
+      <!-- End Protect Code -->
     <script>
         const helpButton = document.getElementById('helpButton');
         const helpModal = document.getElementById('helpModal');
